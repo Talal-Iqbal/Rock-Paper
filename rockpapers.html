@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h">HEllo</h1>
+    <script>
+        function getComputerChoice() {
+            let options = ['Rock', 'Paper' , 'Scissors'];
+            let computerChoice = Math.floor(Math.random()*options.length);
+            console.log(options[computerChoice])
+			return options[computerChoice].toLowerCase()
+        };
+		function getPlayerChoice() {
+			let playerchoice = prompt(`Select your option from following:
+			Rock
+			Paper
+			Scissors`)
+			return playerchoice.toLowerCase()
+		};
+		function playGame() {
+			let computer= getComputerChoice()
+			player = getPlayerChoice()
+			if (computer === player){
+				console.log('TIE')
+			}
+			else{
+				if(computer='Rock' && (player='Scissors') || (computer='Paper' && (player='rock')) || (computer='Scissors' && (players='Paper')) ){
+					console.log('Computer Wins')
+				}
+				else{
+					console.log('Player Wins')
+				}
+			}
+		};
+
+			playGame()
+    </script>
+    </script>
+</body>
+</html>
