@@ -5,41 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<script src="rockpapers.js"></script>
+	<style>
+		*{
+			margin: 0%;
+			padding: 0%;
+			overflow: hidden;
+		}
+		#header{
+			height: 15vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 20px;
+			font-weight: 800;
+			background-color: #393e46;
+			color: #fac650;
+		}
+		#optionsConatiner{
+			width: 70%;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: row;
+			gap: 30px;
+			align-items: center;
+			justify-content: center;
+		}
+		.options{
+			width: 150px;
+			height: 150px;
+			padding: 5px;
+			font-size: 100px;
+			border-radius: 10px;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 10px;
+			background-color: #393e46;
+			cursor: pointer;
+		}
+		.result{
+			margin: 0 auto;
+		}
+		#info{
+			padding: 40px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.scorecard{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 18px;
+			gap: 25px;
+		}
+		.questionMark{
+			font-size: 100px;
+			/* border-radius: 50%; */
+			font-weight: 200;
+			/* width: 100px;
+			height: 100px; */
+			color: white;
+		}
+		#container{
+			background-color: #222831;
+			height: 85vh;
+		}
+	</style>
 </head>
 <body>
-    <h1 id="h">HEllo</h1>
-    <script>
-        function getComputerChoice() {
-            let options = ['Rock', 'Paper' , 'Scissors'];
-            let computerChoice = Math.floor(Math.random()*options.length);
-            console.log(options[computerChoice])
-			return options[computerChoice].toLowerCase()
-        };
-		function getPlayerChoice() {
-			let playerchoice = prompt(`Select your option from following:
-			Rock
-			Paper
-			Scissors`)
-			return playerchoice.toLowerCase()
-		};
-		function playGame() {
-			let computer= getComputerChoice()
-			player = getPlayerChoice()
-			if (computer === player){
-				console.log('TIE')
-			}
-			else{
-				if(computer='Rock' && (player='Scissors') || (computer='Paper' && (player='rock')) || (computer='Scissors' && (players='Paper')) ){
-					console.log('Computer Wins')
-				}
-				else{
-					console.log('Player Wins')
-				}
-			}
-		};
-
-			playGame()
-    </script>
-    </script>
+	<div id="header"><center><h1>Rock Paper Scissor!</h1></center></div>
+<div id="container">
+	<div class="result">
+		<div id="info">
+			<h1 style="color: white;">Select Your Weapon</h1>
+			<h3 style="color: white;">Fist to 5 points wins!</h3>
+			<div class="scorecard">
+				<div class="player">
+					<center><h1 class="questionMark" id="playerOption">?</h1></center>
+					<p style="color: white; font-size: 22px;">Player</p>
+				</div>
+				<div class="computer">
+					<center><h1 class="questionMark" id="computerOption" >?</h1></center>
+					<p style="color: white; font-size: 22px;"> Computer</p>
+				</div>
+			</div>
+		</div>
+		<center><p id="winner" ></p></center>
+	</div>
+	<div id="optionsConatiner">
+			<div class="options" id="rock">
+				👊
+			</div>
+			<div class="options" id="paper">
+				✋
+			</div>
+			<div class="options" id="scissors">
+				✌
+			</div>
+	</div>
+</div>
 </body>
 </html>
